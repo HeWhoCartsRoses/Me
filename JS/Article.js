@@ -5,15 +5,13 @@ function arthead(fil) {
   head.classList.add('h2');
   return head;
 }
-function ptag(fil) {
-  let pa = document.createElement('p');
-  pa.textContent = fil;
-  pa.classList.add('.date');
-  return pa;
-}
 function para(fil) {
   let pa = document.createElement('p');
   pa.textContent = fil;
+  pa.classList.add('text')
+  pa.addEventListener("click", () => {
+
+  })
   return pa;
 }
 function article(arr) {
@@ -21,14 +19,15 @@ function article(arr) {
   article.classList.add('article')
   let art = Object.values(arr);
   article.appendChild(arthead(art[0]));
-  article.appendChild(ptag(art[1]));
-  for (var i = 2; i < art.length; i++) {
+  for (var i = 1; i < art.length; i++) {
+    console.log(art.length)
     article.appendChild(para(art[i]));
   }
   let span = document.createElement('span');
   span.classList.add('expandButton');
   span.addEventListener("click", () => {
     article.classList.toggle('article-open')
+    text.classList.toggle('p--open')
   })
   span.textContent = 'expand';
   article.appendChild(span);

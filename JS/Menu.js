@@ -1,3 +1,4 @@
+
 let big = document.querySelector('.menu-button')
 
 function list(fil) {
@@ -13,7 +14,7 @@ function menu(arr) {
   })
   let crap = document.createElement('ul')
   soup.appendChild(crap)
-  for (var i = 1; i < arr.length; i++) {
+  for (var i = 0; i < arr.length; i++) {
     crap.appendChild(list(arr[i]));
   }
   return soup;
